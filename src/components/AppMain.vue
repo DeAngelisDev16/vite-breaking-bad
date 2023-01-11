@@ -8,17 +8,21 @@ export default {
     data() {
         return {
             store,
+            cardsList: [],
         }
     },
     methods: {
         getCards() {
-            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=10&offset=0', {
+            const self = this;
+
+            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=0', {
                 params: {
                     ID: 12345
                 }
             })
                 .then(function (response) {
-                    console.log(response.data);
+                    console.log(response.data.data);
+                    self.cardsList = response.data.data;
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -37,7 +41,9 @@ export default {
 </script>
 
 <template>
-    <h2>Questo è il main</h2>
+    <div>
+        <p v-for="card in cardsList">{{ card.name }}</p>
+    </div>
 
 
 </template>
