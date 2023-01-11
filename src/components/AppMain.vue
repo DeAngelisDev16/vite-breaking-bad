@@ -44,8 +44,11 @@ export default {
     <div class="cards_wrapper">
         <div class="card" v-for="card in cardsList">
             <img :src="card.card_images[0].image_url" alt="#">
-            <h4>{{ card.name }}</h4>
-            <p>{{ card.archetype }}</p>
+            <div class="card_info">
+                <h5>{{ card.name }}</h5>
+                <p>{{ card.archetype }}</p>
+
+            </div>
 
         </div>
     </div>
@@ -63,12 +66,35 @@ export default {
 
     .card {
         width: calc(100% / 5);
+
         padding: 1.5rem;
+
 
 
         img {
             width: 100%;
         }
+
+        .card_info {
+            height: 120px;
+            background-color: orange;
+            margin-top: -10px;
+
+            h5,
+            p {
+                text-transform: uppercase;
+                padding-top: 1rem;
+
+            }
+
+
+        }
+
+        .card_info h5 {
+            color: white;
+        }
+
+
 
 
     }
