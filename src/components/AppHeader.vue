@@ -8,11 +8,15 @@ export default {
 </script>
 
 <template>
-    <h1>Questo è l'header</h1>
+    <header>
+        <h1>YU-GI-OH api</h1>
+    </header>
 
 
 </template>
 
-<style scoped>
-
+<style lang="scss" scoped>
+h1 {
+    padding: 2rem;
+}
 </style>
