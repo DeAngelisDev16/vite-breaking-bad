@@ -77,6 +77,10 @@ main {
     display: flex;
     align-items: center;
 
+    p {
+        padding: 1rem;
+    }
+
 }
 
 .cards_wrapper {
