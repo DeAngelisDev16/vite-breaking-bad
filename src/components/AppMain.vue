@@ -12,13 +12,13 @@ export default {
     },
     methods: {
         getCards() {
-            axios.get('/user', {
+            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=10&offset=0', {
                 params: {
                     ID: 12345
                 }
             })
                 .then(function (response) {
-                    console.log(response);
+                    console.log(response.data);
                 })
                 .catch(function (error) {
                     console.log(error);
@@ -29,6 +29,7 @@ export default {
         }
     },
     created() {
+        this.getCards()
 
     }
 
