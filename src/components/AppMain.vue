@@ -15,7 +15,7 @@ export default {
         getCards() {
             const self = this;
 
-            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=10&offset=0', {
+            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=0', {
                 params: {
                     ID: 12345
                 }
@@ -42,7 +42,12 @@ export default {
 
 <template>
     <div class="cards_container">
-        <div v-for="card in cardsList">{{ card.name }}</div>
+        <div class="card" v-for="card in cardsList">
+            <img src="" alt="">
+            <h2>{{ card.name }}</h2>
+            <p>{{ card.archetype }}</p>
+
+        </div>
     </div>
 
 
@@ -53,6 +58,14 @@ export default {
     width: 70%;
     margin: 2rem auto;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+
+    .card {
+        width: calc(100% / 5);
+        padding: 2rem;
+        border: 2px dashed black;
+    }
 
 }
 </style>
