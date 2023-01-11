@@ -62,6 +62,7 @@ export default {
 <style lang="scss" scoped>
 main {
     background-color: orange;
+    padding-top: 3rem;
 }
 
 .cards_wrapper {
