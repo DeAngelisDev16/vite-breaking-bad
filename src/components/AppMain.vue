@@ -42,6 +42,9 @@ export default {
 
 <template>
     <main>
+        <div class="result_banner">
+            <p>Found {{ cardsList.length }} cards</p>
+        </div>
         <div class="cards_wrapper">
             <div class="card" v-for="card in cardsList">
                 <img :src="card.card_images[0].image_url" alt="#">
@@ -65,6 +68,17 @@ main {
     padding-top: 3rem;
 }
 
+.result_banner {
+    margin: auto;
+    width: 70%;
+    height: 50px;
+    color: white;
+    background-color: black;
+    display: flex;
+    align-items: center;
+
+}
+
 .cards_wrapper {
     width: 70%;
     margin: auto;
@@ -73,7 +87,7 @@ main {
     flex-wrap: wrap;
     background-color: white;
     padding: 2rem;
-    border: 1px dashed black;
+
 
     .card {
         width: calc(100% / 5);
