@@ -41,28 +41,38 @@ export default {
 </script>
 
 <template>
-    <div class="cards_wrapper">
-        <div class="card" v-for="card in cardsList">
-            <img :src="card.card_images[0].image_url" alt="#">
-            <div class="card_info">
-                <h5>{{ card.name }}</h5>
-                <p>{{ card.archetype }}</p>
+    <main>
+        <div class="cards_wrapper">
+            <div class="card" v-for="card in cardsList">
+                <img :src="card.card_images[0].image_url" alt="#">
+                <div class="card_info">
+                    <h5>{{ card.name }}</h5>
+                    <p>{{ card.archetype }}</p>
+
+                </div>
 
             </div>
-
         </div>
-    </div>
+
+    </main>
 
 
 </template>
 
 <style lang="scss" scoped>
+main {
+    background-color: orange;
+}
+
 .cards_wrapper {
     width: 70%;
-    margin: 2rem auto;
+    margin: auto;
     text-align: center;
     display: flex;
     flex-wrap: wrap;
+    background-color: white;
+    padding: 2rem;
+    border: 1px dashed black;
 
     .card {
         width: calc(100% / 5);
@@ -78,7 +88,7 @@ export default {
         .card_info {
             height: 120px;
             background-color: orange;
-            margin-top: -10px;
+            margin-top: -5px;
 
             h5,
             p {
