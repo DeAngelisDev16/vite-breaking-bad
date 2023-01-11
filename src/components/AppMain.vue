@@ -41,10 +41,10 @@ export default {
 </script>
 
 <template>
-    <div class="cards_container">
+    <div class="cards_wrapper">
         <div class="card" v-for="card in cardsList">
-            <img src="" alt="">
-            <h2>{{ card.name }}</h2>
+            <img :src="card.card_images[0].image_url" alt="#">
+            <h4>{{ card.name }}</h4>
             <p>{{ card.archetype }}</p>
 
         </div>
@@ -54,7 +54,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.cards_container {
+.cards_wrapper {
     width: 70%;
     margin: 2rem auto;
     text-align: center;
@@ -63,8 +63,14 @@ export default {
 
     .card {
         width: calc(100% / 5);
-        padding: 2rem;
-        border: 2px dashed black;
+        padding: 1.5rem;
+
+
+        img {
+            width: 100%;
+        }
+
+
     }
 
 }
