@@ -46,7 +46,11 @@ export default {
 
 <template>
     <main>
-        <SelectComponent />
+        <SelectComponent @canaleAlien="searchAlien()" @canaleLaval="searchLaval()" @canaleVylon="searchVylon()"
+            @canaleInzektor="searchinzektor()" @canaleUmi="searchUmi()" @canaleGusto="searchgusto()" />
+
+
+
         <div class="result_banner">
             <p>Found {{ cardsList.length }} cards</p>
         </div>
