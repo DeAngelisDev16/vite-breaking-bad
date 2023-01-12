@@ -14,7 +14,7 @@ export default {
             store,
             cardsList: [],
             apiUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=0',
-            archetypeUrl: 'https://db.ygoprodeck.com/api/v7/archetypes.php'
+
         }
     },
     methods: {
@@ -38,26 +38,11 @@ export default {
                 });
         },
 
-        searchAlien() {
-            const self = this;
-
-            axios.get(this.archetypeUrl, {
-                params: {
-                    archetype_name: 'Alien'
-                }
-            })
-                .then(function (response) {
-                    console.log(response.archetype_name);
-
-                })
-                .catch(function (error) {
-                    console.log(error);
-                })
-                .then(function () {
-                    // always executed
-                });
-
+        searchCard() {
+            this.getCards();
         }
+
+
     },
     created() {
         this.getCards()
@@ -69,8 +54,7 @@ export default {
 
 <template>
     <main>
-        <SelectComponent @canaleAlien="searchAlien()" @canaleLaval="searchLaval()" @canaleVylon="searchVylon()"
-            @canaleInzektor="searchInzektor()" @canaleUmi="searchUmi()" @canaleGusto="searchGusto()" />
+        <SelectComponent @changed="searchCard()" />
 
 
 

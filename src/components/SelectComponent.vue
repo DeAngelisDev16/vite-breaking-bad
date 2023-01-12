@@ -1,9 +1,15 @@
 <script>
+import { store } from '../store';
 
 
 
 export default {
     name: 'SelectComponent',
+    data(){
+        return{
+            store,
+        }
+    }
   
 }
 </script>
@@ -11,14 +17,14 @@ export default {
 <template>
     <div class="select_container">
         <label for="" class="form-label">Archetypes</label>
-        <select  name="" id="">
+        <select @change="$emit('changed')" v-model="store.searchArchetype" name="" id="">
             <option selected>Select one</option>
-            <option @change="$emit('canaleAlien')" value="">Alien</option>
-            <option @change="$emit('canaleLaval')" value="">Laval</option>
-            <option @change="$emit('canaleVylon')" value="">Vylon</option>
-            <option @change="$emit('canaleInzektor')" value="">Inzektor</option>
-            <option @change="$emit('canaleUmi')" value="">Umi</option>
-            <option @change="$emit('canaleGusto')" value="">Gusto</option>
+            <option  value="Alien">Alien</option>
+            <option  value="Laval">Laval</option>
+            <option  value="Vylon">Vylon</option>
+            <option  value="Inzektor">Inzektor</option>
+            <option  value="Umi">Umi</option>
+            <option  value="Gusto">Gusto</option>
             
 
         </select>
