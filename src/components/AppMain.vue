@@ -23,7 +23,7 @@ export default {
 
             axios.get(this.apiUrl, {
                 params: {
-                    ID: 12345
+                    archetype: store.searchArchetype
                 }
             })
                 .then(function (response) {
