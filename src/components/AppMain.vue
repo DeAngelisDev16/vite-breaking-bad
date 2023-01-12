@@ -47,8 +47,8 @@ export default {
                 }
             })
                 .then(function (response) {
-                    console.log(response.data.data);
-                    self.cardsList = response.data.data;
+                    console.log(response.data);
+
                 })
                 .catch(function (error) {
                     console.log(error);
