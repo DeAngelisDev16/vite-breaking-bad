@@ -13,13 +13,15 @@ export default {
         return {
             store,
             cardsList: [],
+            apiUrl: 'https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=0',
+            archetypeUrl: 'https://db.ygoprodeck.com/api/v7/archetypes.php'
         }
     },
     methods: {
         getCards() {
             const self = this;
 
-            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=15&offset=0', {
+            axios.get(this.apiUrl, {
                 params: {
                     ID: 12345
                 }
@@ -34,6 +36,27 @@ export default {
                 .then(function () {
                     // always executed
                 });
+        },
+
+        searchAlien() {
+            const self = this;
+
+            axios.get(this.archetypeUrl, {
+                params: {
+                    archetype_name: 'Alien'
+                }
+            })
+                .then(function (response) {
+                    console.log(response.data.data);
+                    self.cardsList = response.data.data;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+                .then(function () {
+                    // always executed
+                });
+
         }
     },
     created() {
