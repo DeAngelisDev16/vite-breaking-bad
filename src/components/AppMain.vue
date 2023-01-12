@@ -23,7 +23,7 @@ export default {
 
             axios.get(this.apiUrl, {
                 params: {
-                    archetype: store.searchArchetype
+
                 }
             })
                 .then(function (response) {
@@ -39,7 +39,24 @@ export default {
         },
 
         searchCard() {
-            this.getCards();
+            const self = this;
+
+            axios.get(this.apiUrl, {
+                params: {
+                    archetype: store.searchArchetype
+                }
+            })
+                .then(function (response) {
+                    console.log(response.data.data);
+                    self.cardsList = response.data.data;
+                })
+                .catch(function (error) {
+                    console.log(error);
+                })
+                .then(function () {
+                    // always executed
+                });
+
         }
 
 
