@@ -47,7 +47,7 @@ export default {
                 }
             })
                 .then(function (response) {
-                    console.log(response.data);
+                    console.log(response.archetype_name);
 
                 })
                 .catch(function (error) {
@@ -70,7 +70,7 @@ export default {
 <template>
     <main>
         <SelectComponent @canaleAlien="searchAlien()" @canaleLaval="searchLaval()" @canaleVylon="searchVylon()"
-            @canaleInzektor="searchinzektor()" @canaleUmi="searchUmi()" @canaleGusto="searchgusto()" />
+            @canaleInzektor="searchInzektor()" @canaleUmi="searchUmi()" @canaleGusto="searchGusto()" />
 
 
 
