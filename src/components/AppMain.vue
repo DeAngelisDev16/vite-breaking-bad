@@ -1,10 +1,14 @@
 <script>
 import { store } from '../store';
 import axios from 'axios';
+import SelectComponent from './SelectComponent.vue';
 
 
 export default {
     name: 'AppMain',
+    components: {
+        SelectComponent,
+    },
     data() {
         return {
             store,
@@ -42,6 +46,7 @@ export default {
 
 <template>
     <main>
+        <SelectComponent />
         <div class="result_banner">
             <p>Found {{ cardsList.length }} cards</p>
         </div>
